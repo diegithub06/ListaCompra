@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div#ticket{
+            border: 2px solid black;
+            height: 200px;
+            width: 200px;
+            border-radius: 10px;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Lista de la Compra:</h1>
+    <hr>
+    <label for="">Concepto:</label>
+    <input type="text" id="Concepto" value="melones">
+
+    <label for="">Importe:</label>
+    <input type="text" id="Importe">
+    <button onclick="añadirProducto()">Añadir</button>
+    <div id="ticket">
+        <ol>
+    </div>
+
+    <br>
+    <h1 id="total">0</h1>
+    <script>
+        function añadirProducto(){
+            let concepto = document.getElementById("Concepto").value;
+            let cadenaItem = "<li>" + concepto + "<li>";
+
+
+            document.getElementById("ticket").innerHTML 
+            = document.getElementById("ticket").innerHTML + cadenaItem + "</ol>";
+
+            let importe = Number(document.getElementById("Importe").value);
+                let total = Number(document.getElementById("total").innerHTML);
+                let nuevoTotal = importe + total;
+                document.getElementById("total").innerHTML = nuevoTotal;
+
+        }
+    </script>
+</body>
+</html>
